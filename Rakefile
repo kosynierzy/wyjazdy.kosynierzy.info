@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-KosynierzyInfo::Application.load_tasks
+Kosynierzy::Application.load_tasks
