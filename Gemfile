@@ -27,6 +27,7 @@ group :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'libnotify'
+  gem 'rb-inotify'
 end
 
 group :test do
