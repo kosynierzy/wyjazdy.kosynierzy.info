@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130107223250) do
+ActiveRecord::Schema.define(:version => 20130107230150) do
 
   create_table "matches", :force => true do |t|
     t.datetime "date",       :null => false
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(:version => 20130107223250) do
     t.boolean  "won"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "trips", :force => true do |t|
+    t.integer  "match_id"
+    t.integer  "official_number", :default => 0, :null => false
+    t.text     "comment"
+    t.string   "article_url"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.index ["match_id"], :name => "fk__trips_match_id", :order => {"match_id" => :asc}
+    t.foreign_key ["match_id"], "matches", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "trips_match_id_fkey"
   end
 
 end

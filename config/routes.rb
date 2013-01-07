@@ -1,6 +1,11 @@
 Kosynierzy::Application.routes.draw do
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  constraints :subdomain => 'wyjazdy' do
+    scope :module => 'on_tour' do
+      resources :trips
+
+      root :to => 'trips#index'
+    end
+  end
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -22,6 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'slim'
+gem 'slim-rails'
 
 group :development do
   gem 'guard'
