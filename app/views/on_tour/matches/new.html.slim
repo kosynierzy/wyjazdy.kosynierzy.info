@@ -1,0 +1,13 @@
+= simple_form_for match do |f|
+  = f.input :date, as: :date, end_year: Date.today.year + 1, start_year: 2000
+  = f.input :home_team
+  = f.input :home_score
+  = f.input :away_score
+  = f.input :away_team
+  = f.input :game_type
+  = f.input :season
+  = f.simple_fields_for :trip do |trip_form|
+    = trip_form.input :official_number
+    = trip_form.input :comment
+    = trip_form.input :article_url
+  = f.button :submit

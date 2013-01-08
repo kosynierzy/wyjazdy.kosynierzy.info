@@ -22,6 +22,7 @@ end
 
 gem 'decent_exposure'
 gem 'jquery-rails'
+gem 'simple_form'
 gem 'slim'
 gem 'slim-rails'
 

@@ -1,6 +1,8 @@
 class Match < ActiveRecord::Base
   has_one :trip
-  attr_accessible :away_score, :away_team, :date, :game_type, :home_score, :home_team, :season, :won
+  accepts_nested_attributes_for :trip
+
+  attr_accessible :away_score, :away_team, :date, :game_type, :home_score, :home_team, :season, :won, :trip_attributes
 
   validates :home_team, presence: true
   validates :away_team, presence: true

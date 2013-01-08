@@ -2,6 +2,7 @@ Kosynierzy::Application.routes.draw do
   constraints :subdomain => 'wyjazdy' do
     scope :module => 'on_tour' do
       resources :trips
+      resources :matches
 
       root :to => 'trips#index'
     end

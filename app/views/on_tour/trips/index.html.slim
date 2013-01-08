@@ -8,6 +8,7 @@ table#trips
       th Wyjazdowiczow
       th Komentarz
       th Relacja
+      th Dodano
   tbody
     - for trip in trips
       tr
@@ -19,3 +20,4 @@ table#trips
         td = trip.official_number
         td = trip.comment
         td = trip.article_url
+        td = trip.created_at
