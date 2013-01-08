@@ -20,6 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'decent_exposure'
 gem 'jquery-rails'
 gem 'slim'
 gem 'slim-rails'

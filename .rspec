@@ -1,1 +1,1 @@
---color
+--color --format documentation -r turnip/rspec

@@ -1,2 +1,21 @@
-h1 OnTour::Trips#index
-p Find me in app/views/on_tour/trips/index.html.slim
+table#trips
+  thead
+    tr
+      th Sezon
+      th Data
+      th Rywal
+      th Wynik
+      th Wyjazdowiczow
+      th Komentarz
+      th Relacja
+  tbody
+    - for trip in trips
+      tr
+        td = trip.match.season
+        td = trip.match.date
+        td = trip.match.home_team
+        td
+          | #{trip.match.home_score}:#{trip.match.away_score}
+        td = trip.official_number
+        td = trip.comment
+        td = trip.article_url

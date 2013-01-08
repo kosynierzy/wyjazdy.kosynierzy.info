@@ -1,4 +1,3 @@
 class OnTour::TripsController < ApplicationController
-  def index
-  end
+  expose(:trips)
 end

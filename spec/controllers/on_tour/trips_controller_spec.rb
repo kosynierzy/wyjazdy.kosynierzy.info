@@ -7,6 +7,12 @@ describe OnTour::TripsController do
       get 'index'
       response.should be_success
     end
+
+    it "exposes trips" do
+      trip = create(:trip)
+      get 'index'
+      controller.trips.should eq([trip])
+    end
   end
 
 end
