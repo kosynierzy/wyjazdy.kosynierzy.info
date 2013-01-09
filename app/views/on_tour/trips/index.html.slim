@@ -16,7 +16,9 @@ table#trips
         td = trip.match.date
         td = trip.match.home_team
         td
-          | #{trip.match.home_score}:#{trip.match.away_score}
+          = link_to_if trip.match.stats_url.present?,
+            "#{trip.match.home_score}:#{trip.match.away_score}",
+            trip.match.stats_url
         td = trip.official_number
         td = trip.comment
         td = trip.article_url
