@@ -29,6 +29,9 @@ gem 'slim-rails'
 group :development do
   gem 'guard'
   gem 'guard-rspec'
+end
+
+group :linux do
   gem 'libnotify'
   gem 'rb-inotify'
 end

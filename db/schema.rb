@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130107230150) do
+ActiveRecord::Schema.define(:version => 20130109150403) do
 
   create_table "matches", :force => true do |t|
     t.datetime "date",       :null => false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20130107230150) do
     t.boolean  "won"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "stats_url"
   end
 
   create_table "trips", :force => true do |t|
