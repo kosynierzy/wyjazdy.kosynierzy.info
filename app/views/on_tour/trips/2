@@ -22,4 +22,4 @@ table#trips
         td = trip.official_number
         td = trip.comment
         td = trip.article_url
-        td = l trip.created_at, format: :long
+        td = trip.created_at
