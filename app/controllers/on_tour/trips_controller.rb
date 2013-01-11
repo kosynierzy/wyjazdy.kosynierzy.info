@@ -1,3 +1,3 @@
 class OnTour::TripsController < ApplicationController
-  expose(:trips)
+  expose(:trips) { Trip.joins(:match).order('matches.date DESC') }
 end
