@@ -1,5 +1,5 @@
 class Match < ActiveRecord::Base
-  has_one :trip
+  has_one :trip, inverse_of: :match
   accepts_nested_attributes_for :trip
 
   attr_accessible :away_score, :away_team, :date, :game_type, :home_score, :home_team, :season, :won, :trip_attributes, :stats_url
