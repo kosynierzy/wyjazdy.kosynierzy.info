@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113230534) do
+ActiveRecord::Schema.define(:version => 20130113231839) do
 
   create_table "seasons", :force => true do |t|
     t.string   "name",       :null => false
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20130113230534) do
     t.string   "away_team",  :null => false
     t.integer  "away_score"
     t.string   "game_type",  :null => false
-    t.string   "season",     :null => false
     t.boolean  "won"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

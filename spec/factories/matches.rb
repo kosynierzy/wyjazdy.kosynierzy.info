@@ -9,7 +9,7 @@ FactoryGirl.define do
     away_team "Śląsk"
     away_score 102
     game_type "PLK"
-    season "2013/14"
+    season
     won true
   end
 end

@@ -12,7 +12,7 @@ table#trips
   tbody
     - for trip in trips
       tr
-        td = trip.match.season
+        td = trip.match.season.name
         td = l trip.match.date, format: :long
         td = trip.match.home_team
         td

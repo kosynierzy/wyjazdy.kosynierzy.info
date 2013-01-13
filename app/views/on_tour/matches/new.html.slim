@@ -5,7 +5,7 @@
   = f.input :away_score
   = f.input :away_team
   = f.input :game_type
-  = f.input :season
+  = f.input :season_id, collection: Season.all
   = f.input :stats_url
   = f.simple_fields_for :trip do |trip_form|
     = trip_form.input :official_number
