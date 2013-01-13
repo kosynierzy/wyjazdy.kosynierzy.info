@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130112024708) do
+ActiveRecord::Schema.define(:version => 20130113230534) do
+
+  create_table "seasons", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.index ["name"], :name => "index_seasons_on_name", :unique => true, :order => {"name" => :asc}
+  end
 
   create_table "matches", :force => true do |t|
     t.date     "date",       :null => false
@@ -25,13 +32,9 @@ ActiveRecord::Schema.define(:version => 20130112024708) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "stats_url"
-  end
-
-  create_table "seasons", :force => true do |t|
-    t.string   "name",       :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.index ["name"], :name => "index_seasons_on_name", :unique => true, :order => {"name" => :asc}
+    t.integer  "season_id"
+    t.index ["season_id"], :name => "fk__matches_season_id", :order => {"season_id" => :asc}
+    t.foreign_key ["season_id"], "seasons", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "matches_season_id_fkey"
   end
 
   create_table "trips", :force => true do |t|
