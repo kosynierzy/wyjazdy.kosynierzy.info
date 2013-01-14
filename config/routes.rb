@@ -1,8 +1,8 @@
 Kosynierzy::Application.routes.draw do
   constraints :subdomain => 'wyjazdy' do
     scope :module => 'on_tour' do
-      resources :trips
       resources :matches
+      resources :seasons, :only => [:index, :show]
 
       root :to => 'trips#index'
     end

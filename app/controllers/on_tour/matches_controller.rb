@@ -13,6 +13,6 @@ class OnTour::MatchesController < ApplicationController
   def create
     match.save
 
-    respond_with match, location: trips_path
+    respond_with match, location: root_path(subdomain: 'wyjazdy')
   end
 end
