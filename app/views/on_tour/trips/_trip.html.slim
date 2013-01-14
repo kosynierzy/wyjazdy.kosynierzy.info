@@ -1,0 +1,12 @@
+tr
+  td = trip.match.season.name
+  td = l trip.match.date, format: :long
+  td = trip.match.home_team
+  td
+    = link_to_if trip.match.stats_url.present?,
+      "#{trip.match.home_score}:#{trip.match.away_score}",
+      trip.match.stats_url
+  td = trip.official_number
+  td = trip.comment
+  td = trip.article_url
+  td = l trip.created_at, format: :long
