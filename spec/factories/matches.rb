@@ -3,7 +3,7 @@
 
 FactoryGirl.define do
   factory :match do
-    date "2013-01-07 23:32:50"
+    date "2013-01-07"
     home_team "Anwil"
     home_score 95
     away_team "Śląsk"

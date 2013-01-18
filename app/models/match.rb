@@ -10,4 +10,15 @@ class Match < ActiveRecord::Base
   validates :date, presence: true
   validates :season, presence: true
   validates :game_type, presence: true
+
+  before_destroy :check_for_trip
+
+  private
+
+  def check_for_trip
+    if trip.present?
+      errors.add(:base, 'cannot delete match while trip exists')
+      return false
+    end
+  end
 end
