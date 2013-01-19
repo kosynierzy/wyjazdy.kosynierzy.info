@@ -27,6 +27,10 @@ gem 'simple_form'
 gem 'slim'
 gem 'slim-rails'
 
+group :production do
+  gem 'exception_notification'
+end
+
 group :development do
   gem 'guard'
   gem 'guard-rspec'
