@@ -1,4 +1,16 @@
 Kosynierzy::Application.routes.draw do
+  constraints :subdomain => 'account' do
+    devise_for :users
+
+    authenticated :user do
+      root :to => 'devise/registrations#edit'
+    end
+
+    devise_scope :user do
+      root :to => 'devise/sessions#new'
+    end
+  end
+
   constraints :subdomain => 'wyjazdy' do
     scope :module => 'on_tour' do
       resources :matches
@@ -54,9 +66,7 @@ Kosynierzy::Application.routes.draw do
   #     resources :products
   #   end
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'on_tour/trips#index'
 
   # See how all your routes lay out with "rake routes"
 

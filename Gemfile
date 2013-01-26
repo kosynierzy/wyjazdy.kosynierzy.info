@@ -22,6 +22,8 @@ group :assets do
 end
 
 gem 'decent_exposure'
+gem 'devise'
+gem 'devise-i18n'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'slim'
@@ -34,6 +36,7 @@ end
 group :development do
   gem 'guard'
   gem 'guard-rspec'
+  gem 'letter_opener'
 end
 
 group :linux do

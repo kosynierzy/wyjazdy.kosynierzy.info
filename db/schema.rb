@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113231839) do
+ActiveRecord::Schema.define(:version => 20130124235636) do
 
   create_table "seasons", :force => true do |t|
     t.string   "name",       :null => false
@@ -45,6 +45,34 @@ ActiveRecord::Schema.define(:version => 20130113231839) do
     t.datetime "updated_at",                     :null => false
     t.index ["match_id"], :name => "fk__trips_match_id", :order => {"match_id" => :asc}
     t.foreign_key ["match_id"], "matches", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "trips_match_id_fkey"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username",               :default => "", :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.integer  "failed_attempts",        :default => 0
+    t.string   "unlock_token"
+    t.datetime "locked_at"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.index ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true, :order => {"confirmation_token" => :asc}
+    t.index ["email"], :name => "index_users_on_email", :unique => true, :order => {"email" => :asc}
+    t.index ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true, :order => {"reset_password_token" => :asc}
+    t.index ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true, :order => {"unlock_token" => :asc}
+    t.index ["username"], :name => "index_users_on_username", :unique => true, :order => {"username" => :asc}
   end
 
 end
