@@ -17,7 +17,7 @@ set :branch, 'master'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'log', 'tmp']
+set :shared_paths, ['config/database.yml', 'log', 'tmp', 'config/application.yml']
 
 # Optional settings:
 set :user, 'deploy'    # Username in the server to SSH to.
@@ -45,6 +45,7 @@ task :setup => :environment do
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
 
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
+  queue! %[touch "#{deploy_to}/shared/config/application.yml"]
 
   queue! %[mkdir -p "#{deploy_to}/shared/tmp"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/tmp"]

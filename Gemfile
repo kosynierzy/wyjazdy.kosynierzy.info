@@ -24,6 +24,7 @@ end
 gem 'decent_exposure'
 gem 'devise'
 gem 'devise-i18n'
+gem 'figaro'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'slim'
