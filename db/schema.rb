@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124235636) do
+ActiveRecord::Schema.define(:version => 20130129205238) do
 
   create_table "seasons", :force => true do |t|
     t.string   "name",       :null => false
@@ -73,6 +73,21 @@ ActiveRecord::Schema.define(:version => 20130124235636) do
     t.index ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true, :order => {"reset_password_token" => :asc}
     t.index ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true, :order => {"unlock_token" => :asc}
     t.index ["username"], :name => "index_users_on_username", :unique => true, :order => {"username" => :asc}
+  end
+
+  create_table "users_groups", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users_users_groups", :id => false, :force => true do |t|
+    t.integer "users_id",        :null => false
+    t.integer "users_groups_id", :null => false
+    t.index ["users_groups_id"], :name => "fk__users_users_groups_users_groups_id", :order => {"users_groups_id" => :asc}
+    t.index ["users_id"], :name => "fk__users_users_groups_users_id", :order => {"users_id" => :asc}
+    t.foreign_key ["users_groups_id"], "users_groups", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "users_users_groups_users_groups_id_fkey"
+    t.foreign_key ["users_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "users_users_groups_users_id_fkey"
   end
 
 end
