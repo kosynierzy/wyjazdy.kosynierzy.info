@@ -2,11 +2,11 @@ Kosynierzy::Application.routes.draw do
   constraints :subdomain => 'account' do
     devise_for :users
 
-    authenticated :user do
-      root :to => 'devise/registrations#edit'
-    end
-
     devise_scope :user do
+      authenticated :user do
+        root :to => 'devise/registrations#edit'
+      end
+
       root :to => 'devise/sessions#new'
     end
   end
