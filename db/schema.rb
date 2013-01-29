@@ -48,12 +48,12 @@ ActiveRecord::Schema.define(:version => 20130129214148) do
   end
 
   create_table "groups_users", :id => false, :force => true do |t|
-    t.integer "groups_id", :null => false
-    t.integer "users_id",  :null => false
-    t.index ["groups_id"], :name => "fk__groups_users_groups_id", :order => {"groups_id" => :asc}
-    t.index ["users_id"], :name => "fk__groups_users_users_id", :order => {"users_id" => :asc}
-    t.foreign_key ["groups_id"], "groups", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "groups_users_groups_id_fkey"
-    t.foreign_key ["users_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "groups_users_users_id_fkey"
+    t.integer "group_id", :null => false
+    t.integer "user_id",  :null => false
+    t.index ["group_id"], :name => "fk__groups_users_group_id", :order => {"group_id" => :asc}
+    t.index ["user_id"], :name => "fk__groups_users_user_id", :order => {"user_id" => :asc}
+    t.foreign_key ["group_id"], "groups", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "groups_users_group_id_fkey"
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "groups_users_user_id_fkey"
   end
 
   create_table "seasons", :force => true do |t|
