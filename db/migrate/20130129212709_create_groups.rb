@@ -1,6 +1,6 @@
-class CreateUsersGroups < ActiveRecord::Migration
+class CreateGroups < ActiveRecord::Migration
   def change
-    create_table :users_groups do |t|
+    create_table :groups do |t|
       t.string :name, :null => false
 
       t.timestamps
