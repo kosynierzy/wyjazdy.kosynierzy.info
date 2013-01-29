@@ -1,1 +1,3 @@
---color --format documentation -r turnip/rspec
+--color
+--format Fuubar
+-r turnip/rspec

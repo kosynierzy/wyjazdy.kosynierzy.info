@@ -46,6 +46,8 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'delorean'
+  gem 'fuubar'
+  gem 'rb-inotify'
   gem 'shoulda-matchers'
   gem 'turnip'
 end
