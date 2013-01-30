@@ -1,1 +1,90 @@
 @import "normalize";
+@import "bourbon";
+@import "grid-settings";
+@import "neat";
+
+@import "colors";
+
+.topbar {
+  background-color: $green;
+  @include background-image(linear-gradient($green 0%, darken($green, 10%) 100%));
+  @include box-shadow(0 1px 0 rgba(255, 255, 255, 0.4), 0 0 10px rgba(0, 0, 0, 0.5));
+
+  header {
+    @include outer-container;
+  }
+
+  .page-nav {
+    @include span-columns(8);
+
+    ul {
+      float: left;
+    }
+
+    li {
+      padding-right: 1em;
+    }
+  }
+
+  .user-nav {
+    @include span-columns(4);
+    text-align: right;
+
+    ul {
+      float: right;
+    }
+
+    li {
+      padding-left: 1em;
+    }
+  }
+
+  a {
+    color: #000;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, .2);
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  li {
+    float: left;
+  }
+}
+
+.site {
+  @include outer-container;
+
+  a {
+    color: $link;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+.flash {
+  &.success {
+    background-color: $success;
+    color: darken($success, 25%);
+  }
+  &.alert {
+    background-color: $warning;
+    color: darken($warning, 25%);
+  }
+  &.notice {
+    background-color: $notice;
+    color: darken($notice, 25%);
+  }
+  &.error {
+    background-color: $error;
+    color: darken($error, 25%);
+  }
+}

@@ -1,5 +1,5 @@
 doctype html
-html
+html lang="pl"
   head
     meta charset="utf-8"
     title Kosynierzy On Tour
@@ -8,19 +8,28 @@ html
     = csrf_meta_tags
     - if Rails.env.production?
       = javascript_include_tag "ga"
+    = javascript_include_tag "http://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9:all.js"
   body
-    header.user-panel
-      nav
-        = link_to 'Kosynierzy', 'http://kosynierzy.info/'
-        = link_to 'Wyjazdy', root_url(subdomain: 'wyjazdy')
-        - if user_signed_in?
-          = link_to 'Sign out', destroy_user_session_url(subdomain: 'account'), method: :delete
-        - else
-          = link_to 'Sign in', new_user_session_url(subdomain: 'account')
+    .topbar
+      header
+        nav.page-nav
+          ul role="menu nav"
+            li role="menuitem"= link_to 'Kosynierzy', 'http://kosynierzy.info/'
+            li role="menuitem"= link_to 'Wyjazdy', root_url(subdomain: 'wyjazdy')
 
-    .notice= notice
-    .alert= alert
+        nav.user-nav
+          ul role="nav"
+            - if user_signed_in?
+              li role="menuitem"
+                = link_to 'Sign out', destroy_user_session_url(subdomain: 'account'), method: :delete
+            - else
+              li role="menuitem"
+                = link_to 'Sign in', new_user_session_url(subdomain: 'account')
 
-    = yield
+    .site
+      .notice= notice
+      .alert= alert
+
+      = yield
 
     = javascript_include_tag "application"

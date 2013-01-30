@@ -55,13 +55,13 @@ audio:not([controls]) {
    ========================================================================== */
 
 /*
- * 1. Sets default font family to sans-serif.
+ * 1. Sets default font family to source sans pro.
  * 2. Prevents iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
 
 html {
-    font-family: sans-serif; /* 1 */
+    font-family: source-sans-pro, sans-serif; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
 }
@@ -95,9 +95,26 @@ a:hover {
     outline: 0;
 }
 
+/*
+ * Remove defaults underline
+ */
+
+a {
+    text-decoration: none;
+}
+
 /* ==========================================================================
    Typography
    ========================================================================== */
+
+/*
+ * Addresses body default font size
+ */
+
+body {
+  font-size: 1em;
+  line-height: 1.618em;
+}
 
 /*
  * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
@@ -199,6 +216,16 @@ sup {
 
 sub {
     bottom: -0.25em;
+}
+
+/*
+ * Prevents of removing margins and list type
+ */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 /* ==========================================================================
@@ -373,3 +400,28 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/* ==========================================================================
+   Selection
+   ========================================================================== */
+
+/*
+ * Set selection color
+ */
+
+::selection {
+  background: rgb(255,255,158);
+}
+::-moz-selection {
+  background: rgb(255,255,158);
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
+body {
+  -webkit-tap-highlight-color: rgb(255,255,158);
+}
+
