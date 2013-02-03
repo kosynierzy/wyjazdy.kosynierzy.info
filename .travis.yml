@@ -1,3 +1,13 @@
 language: ruby
+bundler_args: --without development
+before_script:
+  - psql -c 'create database kosynierzy_test;' -U postgres
+  - cp config/database.yml.example config/database.yml
+  - bundle exec rake db:schema:load
+script:
+  - bundle exec rspec spec
 rvm:
   - "1.9.3"
+notifications:
+  email:
+    - yanoo@kosynierzy.info
