@@ -56,6 +56,7 @@ Kosynierzy::Application.configure do
     :port => 587,
     :domain => 'kosynierzy.info',
     :authentication => 'plain',
+    :enable_starttls_auto => true,
     :user_name => ENV['GMAIL_USERNAME'],
     :password => ENV['GMAIL_PASSWORD']
   }
