@@ -22,6 +22,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'commands'
 gem 'decent_exposure'
 gem 'devise'
 gem 'devise-i18n'
