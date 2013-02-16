@@ -1,5 +1,5 @@
 Feature: On Tour History
-  In order to member the history of tours
+  In order to remember the history of tours
   As a user
   I want to be able to check where I have been
 
