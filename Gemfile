@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails', '3.2.11'
 gem 'rails-i18n'
 
@@ -34,7 +36,6 @@ gem 'slim-rails'
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'guard'
   gem 'guard-rspec'
   gem 'letter_opener'
