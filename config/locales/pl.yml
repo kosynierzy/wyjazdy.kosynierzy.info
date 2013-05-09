@@ -1,0 +1,13 @@
+pl:
+  update:
+    success: 'Zaktualizowano!'
+  trips:
+    season: 'Sezon'
+    date: 'Data'
+    rival: 'Rywal'
+    score: 'Wynik'
+    trip_number: 'Liczba wyjazdowa'
+    comment: 'Komentarz'
+    relation: 'Relacja'
+    presence: 'Obecność'
+    toggle: 'Zmień'

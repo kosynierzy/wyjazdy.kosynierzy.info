@@ -9,4 +9,9 @@ tr
   td = trip.official_number
   td = trip.comment
   td = trip.article_url
-  td = l trip.created_at, format: :long
+  - if signed_in?
+    td
+      - if current_user.trips.include?(trip)
+        | :) - #{link_to t('trips.toggle'), trip_absence_path(trip), method: :delete}
+      - else
+        | :( - #{link_to t('trips.toggle'), trip_presence_path(trip), method: :post}

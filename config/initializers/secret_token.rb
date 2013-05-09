@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Kosynierzy::Application.config.secret_token = ENV['SECRET_TOKEN'] || '522b18'
+Kosynierzy::Application.config.secret_token = ENV['SECRET_TOKEN'] || '6ee32cea59375e6cfdd033d3512e3a10'

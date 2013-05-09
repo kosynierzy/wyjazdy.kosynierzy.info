@@ -17,6 +17,10 @@ Kosynierzy::Application.routes.draw do
       resources :seasons,
         :only => [:show],
         :constraints => { :id => /\d{4}\/\d{2}/ }
+      resources :trips, :only => [] do
+        post :presence
+        delete :absence
+      end
 
       root :to => 'trips#index'
     end

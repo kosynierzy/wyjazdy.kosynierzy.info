@@ -1,13 +1,16 @@
 table#trips
   thead
     tr
-      th Sezon
-      th Data
-      th Rywal
-      th Wynik
-      th Wyjazdowiczow
-      th Komentarz
-      th Relacja
-      th Dodano
+      th= t('trips.season')
+      th= t('trips.date')
+      th= t('trips.rival')
+      th= t('trips.score')
+      th= t('trips.trip_number')
+      th= t('trips.comment')
+      th= t('trips.relation')
+      - if signed_in?
+        th
+          = t('trips.presence')
+          | (#{current_user.trips.size})
   tbody
     = render trips
