@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130129214148) do
+ActiveRecord::Schema.define(:version => 20130509213718) do
 
   create_table "groups", :force => true do |t|
     t.string   "name",       :null => false
@@ -88,6 +88,15 @@ ActiveRecord::Schema.define(:version => 20130129214148) do
     t.datetime "updated_at",                     :null => false
     t.index ["match_id"], :name => "fk__trips_match_id", :order => {"match_id" => :asc}
     t.foreign_key ["match_id"], "matches", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "trips_match_id_fkey"
+  end
+
+  create_table "trips_users", :id => false, :force => true do |t|
+    t.integer "trip_id", :null => false
+    t.integer "user_id", :null => false
+    t.index ["trip_id"], :name => "fk__trips_users_trip_id", :order => {"trip_id" => :asc}
+    t.index ["user_id"], :name => "fk__trips_users_user_id", :order => {"user_id" => :asc}
+    t.foreign_key ["trip_id"], "trips", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_trips_users_trip_id"
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_trips_users_user_id"
   end
 
 end

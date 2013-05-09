@@ -8,4 +8,5 @@ describe User do
   it { should validate_confirmation_of(:password) }
 
   it { should have_and_belong_to_many(:groups) }
+  it { should have_and_belong_to_many(:trips) }
 end
