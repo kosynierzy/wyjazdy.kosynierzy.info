@@ -6,6 +6,8 @@
 @import "colors";
 
 .topbar {
+  position: fixed;
+
   background-color: $green;
   @include background-image(linear-gradient($green 0%, darken($green, 10%) 100%));
   @include box-shadow(0 1px 0 rgba(255, 255, 255, 0.4), 0 0 10px rgba(0, 0, 0, 0.5));
@@ -55,6 +57,7 @@
 }
 
 .site {
+  padding-top: 2em;
   @include outer-container;
 
   a {
