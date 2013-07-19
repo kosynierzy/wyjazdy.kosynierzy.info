@@ -9,12 +9,12 @@ describe OnTour::SeasonsController do
 
     it "returns http success" do
       get 'show', :id => '2000/01'
-      response.should be_success
+      expect(response).to be_success
     end
 
     it "exposes season" do
       get 'show', :id => '2000/01'
-      controller.season.should eq(@season)
+      expect(controller.season).to eq(@season)
     end
   end
 

@@ -5,13 +5,13 @@ describe OnTour::TripsController do
   describe "GET 'index'" do
     it "returns http success" do
       get 'index'
-      response.should be_success
+      expect(response).to be_success
     end
 
     it "exposes trips" do
       trip = create(:trip)
       get 'index'
-      controller.trips.should eq([trip])
+      expect(controller.trips).to eq([trip])
     end
 
     context "json format" do
