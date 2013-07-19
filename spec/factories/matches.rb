@@ -11,5 +11,6 @@ FactoryGirl.define do
     game_type "PLK"
     season
     won true
+    stats_url "http://example.com/"
   end
 end
