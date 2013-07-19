@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TripsRepresenter do
+describe OnTour::TripsRepresenter do
   describe '#to_json' do
     before do
       trips = []

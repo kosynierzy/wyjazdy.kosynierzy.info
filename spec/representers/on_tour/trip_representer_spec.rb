@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TripRepresenter do
+describe OnTour::TripRepresenter do
   let(:trip) { create(:trip) }
 
   describe '#to_json' do

@@ -1,6 +1,6 @@
 require 'roar/representer/json'
 
-module TripRepresenter
+module OnTour::TripRepresenter
   include Roar::Representer::JSON
 
   property :id

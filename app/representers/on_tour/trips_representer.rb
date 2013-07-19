@@ -1,7 +1,7 @@
 require 'representable/json/collection'
 
-module TripsRepresenter
+module OnTour::TripsRepresenter
   include Representable::JSON::Collection
 
-  items extend: TripRepresenter, class: Trip
+  items extend: OnTour::TripRepresenter, class: Trip
 end
