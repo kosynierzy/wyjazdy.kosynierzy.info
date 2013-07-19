@@ -16,5 +16,9 @@ describe OnTour::TripRepresenter do
     it 'contains trip official number' do
       expect(@parsed_body['official_number']).to eq(trip.official_number)
     end
+
+    it 'contains match' do
+      expect(@parsed_body['match']['id']).to eq(trip.match_id)
+    end
   end
 end

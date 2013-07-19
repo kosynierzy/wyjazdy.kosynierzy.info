@@ -2,11 +2,14 @@ require 'spec_helper'
 
 describe OnTour::TripsRepresenter do
   describe '#to_json' do
+    let(:season) { create(:season) }
+
     before do
       trips = []
 
       5.times do |i|
-        trips << double(:trip, id: i, official_number: 10)
+        match = create(:match, season: season)
+        trips << create(:trip, match: match)
       end
 
       json = trips.extend(described_class).to_json

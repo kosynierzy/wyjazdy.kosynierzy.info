@@ -5,4 +5,5 @@ module OnTour::TripRepresenter
 
   property :id
   property :official_number
+  property :match, extend: OnTour::MatchRepresenter
 end
