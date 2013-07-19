@@ -13,6 +13,10 @@ describe OnTour::MatchRepresenter do
       expect(@parsed_body['id']).to eq(match.id)
     end
 
+    it 'contains season' do
+      expect(@parsed_body['season']['id']).to eq(match.season_id)
+    end
+
     it 'contains away score' do
       expect(@parsed_body['away_score']).to eq(match.away_score)
     end

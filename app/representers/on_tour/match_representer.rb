@@ -4,6 +4,7 @@ module OnTour::MatchRepresenter
   include Roar::Representer::JSON
 
   property :id
+  property :season, extend: OnTour::SeasonRepresenter
   property :date
   property :home_score
   property :away_score
