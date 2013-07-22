@@ -20,5 +20,13 @@ describe OnTour::TripRepresenter do
     it 'contains match' do
       expect(@parsed_body['match']['id']).to eq(trip.match_id)
     end
+
+    it 'contains comment' do
+      expect(@parsed_body['comment']).to eq(trip.comment)
+    end
+
+    it 'contains article url' do
+      expect(@parsed_body['article_url']).to eq(trip.article_url)
+    end
   end
 end

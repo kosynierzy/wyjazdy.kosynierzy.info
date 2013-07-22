@@ -1,14 +1,18 @@
-tr
-  td = trip.match.season.name
-  td = l trip.match.date, format: :long
-  td = trip.match.home_team
+tr ng-repeat="trip in trips"
   td
-    = link_to_if trip.match.stats_url.present?,
-      "#{trip.match.home_score}:#{trip.match.away_score}",
-      trip.match.stats_url
-  td = trip.official_number
-  td = trip.comment
-  td = trip.article_url
+    | {{ trip.match.season.name }}
+  td
+    | {{ trip.match.date }}
+  td
+    | {{ trip.match.home_team }}
+  td
+    a href="{{ trip.match.stats_url }}" {{ trip.match.home_score }}:{{ trip.match.away_score }}
+  td
+    | {{ trip.official_number }}
+  td
+    | {{ trip.comment }}
+  td
+    | {{ trip.article_url }}
   - if signed_in?
     td
       - if current_user.trips.include?(trip)

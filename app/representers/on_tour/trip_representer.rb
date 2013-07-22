@@ -5,5 +5,7 @@ module OnTour::TripRepresenter
 
   property :id
   property :official_number
+  property :comment
+  property :article_url
   property :match, extend: OnTour::MatchRepresenter
 end

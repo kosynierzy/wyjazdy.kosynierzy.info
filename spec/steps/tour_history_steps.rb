@@ -24,6 +24,7 @@ step "I am guest user" do
 end
 
 step "I visit on tour page" do
+  switch_to_subdomain('wyjazdy')
   visit "/"
 end
 

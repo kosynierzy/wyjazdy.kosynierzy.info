@@ -1,4 +1,4 @@
-table#trips
+table#trips ng-controller="TripsCtrl"
   thead
     tr
       th= t('trips.season')
@@ -13,4 +13,4 @@ table#trips
           = t('trips.presence')
           | (#{current_user.trips.size})
   tbody
-    = render trips
+    = render 'trip'

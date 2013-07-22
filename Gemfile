@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'http://rails-assets.org'
 
 ruby '2.0.0'
 
@@ -22,6 +23,8 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'rails-assets-angular'
 end
 
 gem 'commands'
@@ -52,6 +55,7 @@ group :test do
   gem 'database_cleaner'
   gem 'delorean'
   gem 'fuubar'
+  gem 'poltergeist'
   gem 'rb-inotify'
   gem 'shoulda-matchers'
   gem 'turnip'

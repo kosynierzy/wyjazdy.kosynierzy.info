@@ -1,3 +1,4 @@
+@javascript
 Feature: On Tour History
   In order to remember the history of tours
   As a user
