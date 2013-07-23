@@ -4,6 +4,15 @@
 
 # kosynierzy.info
 
+## Installation
+
+Follow the rabbit:
+
+1. git clone `git://github.com/kosynierzy/kosynierzy.info`
+2. `cp config/database.yml.example config/database.yml` and fill with proper values
+3. `bundle`
+4. `bundle exec rake db:setup`
+
 ## License
 
 This software is free to use under the [BSD (3-Clause) License](http://opensource.org/licenses/BSD-3-Clause). See the [LICENSE file][] for license text and copyright information.
