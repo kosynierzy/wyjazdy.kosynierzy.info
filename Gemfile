@@ -28,6 +28,7 @@ group :assets do
 end
 
 gem 'commands'
+gem 'coveralls', require: false
 gem 'decent_exposure'
 gem 'devise'
 gem 'devise-i18n'
