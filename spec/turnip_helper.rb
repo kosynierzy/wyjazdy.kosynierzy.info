@@ -15,7 +15,7 @@ def switch_to_main_domain
   switch_to_subdomain nil
 end
 
-Rspec.configure do |config|
+RSpec.configure do |config|
   switch_to_main_domain
 end
 
