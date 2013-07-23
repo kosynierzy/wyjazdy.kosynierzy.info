@@ -23,6 +23,16 @@ end
 step "I am guest user" do
 end
 
+step "I am signed in user" do
+  switch_to_subdomain('account')
+  create(:user, username: 'username').confirm!
+  visit '/users/sign_in'
+  fill_in 'Username', with: 'username'
+  fill_in 'Password', with: 'password'
+  click_button "Sign in"
+  expect(page).to have_content("Zalogowano pomyślnie")
+end
+
 step "I visit on tour page" do
   switch_to_subdomain('wyjazdy')
   visit "/"
@@ -38,9 +48,9 @@ step "I should see tour history list" do
 end
 
 step "I should not see a column about being on tour" do
-  # todo
+  expect(page).to_not have_selector(:xpath, "//table[@id='trips']//thead//tr//th[8]")
 end
 
 step "I should see a column about being on tour" do
-  # todo
+  expect(page).to have_selector(:xpath, "//table[@id='trips']//thead//tr//th[8]")
 end

@@ -15,7 +15,4 @@ tr ng-repeat="trip in trips"
     | {{ trip.article_url }}
   - if signed_in?
     td
-      - if current_user.trips.include?(trip)
-        | :) - #{link_to t('trips.toggle'), trip_absence_path(trip), method: :delete}
-      - else
-        | :( - #{link_to t('trips.toggle'), trip_presence_path(trip), method: :post}
+      | Here would be presence / absence link
