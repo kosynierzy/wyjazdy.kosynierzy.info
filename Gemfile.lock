@@ -302,6 +302,7 @@ DEPENDENCIES
   guard
   guard-rspec
   jquery-rails
+  launchy
   letter_opener
   libnotify
   neat

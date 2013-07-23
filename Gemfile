@@ -56,6 +56,7 @@ group :test do
   gem 'database_cleaner'
   gem 'delorean'
   gem 'fuubar'
+  gem 'launchy'
   gem 'poltergeist'
   gem 'rb-inotify'
   gem 'shoulda-matchers'
