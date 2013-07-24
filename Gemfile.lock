@@ -46,6 +46,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chillout (0.6.0)
+      multi_json (~> 1.4)
     chronic (0.9.1)
     coderay (1.0.9)
     coffee-rails (3.2.2)
@@ -287,6 +289,7 @@ DEPENDENCIES
   awesome_print
   better_errors
   capybara
+  chillout
   coffee-rails (~> 3.2.1)
   commands
   coveralls

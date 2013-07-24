@@ -40,6 +40,10 @@ gem 'simple_form'
 gem 'slim'
 gem 'slim-rails'
 
+group :production do
+  gem 'chillout'
+end
+
 group :development do
   gem 'better_errors'
   gem 'guard'
