@@ -21,3 +21,13 @@ Feature: Private history
     Given I am signed in as user1
     When I visit on tour page
     Then I should see a column about being on tour
+
+  Scenario: User sees his tour count
+    Given I am signed in as user1
+    When I visit on tour page
+    Then I should see that I have been twice on tour
+
+  Scenario: User browses his records
+    Given I am signed in as user1
+    When I visit on tour page
+    Then I should have registered presence

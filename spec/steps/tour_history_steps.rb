@@ -24,6 +24,7 @@ step "there are following trips:" do |table|
   end
 
   @matches = matches.sort_by { |m| m.date }.reverse
+  @user1 = users['user1']
 end
 
 step "I am guest user" do
@@ -57,5 +58,16 @@ step "I should not see a column about being on tour" do
 end
 
 step "I should see a column about being on tour" do
+  expect(page).to have_selector(:xpath, "//table[@id='trips']//thead//tr//th[8]")
+end
+
+step "I should see that I have been twice on tour" do
   expect(page.find(:xpath, "//table[@id='trips']//thead//tr//th[8]")).to have_content("Obecność(2)")
+end
+
+step "I should have registered presence" do
+  page.all(:xpath, "//table[@id='trips']//tbody//tr").each_with_index do |row, index|
+    presence = @user1.trips.include?(@matches[index].trip)
+    row.find(:xpath, "td[8]").text.should eq(presence ? ':)' : ':(')
+  end
 end

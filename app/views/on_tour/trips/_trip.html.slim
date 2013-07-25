@@ -15,4 +15,7 @@ tr ng-repeat="trip in trips"
     | {{ trip.article_url }}
   - if signed_in?
     td
-      | Here would be presence / absence link
+      a ng-show="trip.presence"
+        | :)
+      a ng-hide="trip.presence"
+        | :(

@@ -9,7 +9,7 @@ class OnTour::TripsController < ApplicationController
   def index
     respond_with trips do |format|
       format.html
-      format.json { render json: trips.extend(OnTour::TripsRepresenter) }
+      format.json { render json: trips.extend(OnTour::TripsRepresenter).to_json(current_user: current_user) }
     end
   end
 

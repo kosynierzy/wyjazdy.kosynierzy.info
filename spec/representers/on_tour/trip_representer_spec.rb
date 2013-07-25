@@ -2,10 +2,11 @@ require 'spec_helper'
 
 describe OnTour::TripRepresenter do
   let(:trip) { create(:trip) }
+  let(:user) { double(:user, trips: []) }
 
   describe '#to_json' do
     before do
-      json = trip.extend(described_class).to_json
+      json = trip.extend(described_class).to_json(current_user: user)
       @parsed_body = JSON.parse(json)
     end
 
@@ -27,6 +28,30 @@ describe OnTour::TripRepresenter do
 
     it 'contains article url' do
       expect(@parsed_body['article_url']).to eq(trip.article_url)
+    end
+
+    context 'guest user' do
+      let(:user) { nil }
+
+      it 'contains false presence' do
+        expect(@parsed_body['presence']).to eq(false)
+      end
+    end
+
+    context 'user have not been on trip' do
+      let(:user) { double(:user, trips: []) }
+
+      it 'contains false presence' do
+        expect(@parsed_body['presence']).to eq(false)
+      end
+    end
+
+    context 'user have been on trip' do
+      let(:user) { double(:user, trips: [trip]) }
+
+      it 'contains true presence' do
+        expect(@parsed_body['presence']).to eq(true)
+      end
     end
   end
 end
