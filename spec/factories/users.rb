@@ -6,5 +6,6 @@ FactoryGirl.define do
     email { "#{username.downcase}@example.com" }
     password "password"
     password_confirmation { password }
+    confirmed_at { 1.day.ago }
   end
 end

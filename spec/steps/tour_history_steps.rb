@@ -1,7 +1,10 @@
 step "there are following trips:" do |table|
   seasons = {}
+  users = {}
   matches = []
   table.hashes.map { |h| h["Season"] }.uniq.each { |s| seasons[s] = Season.create!(name: s) }
+  table.hashes.map { |h| h["Visitor"] }.keep_if(&:present?).uniq.each { |u| users[u] = create(:user, username: u) }
+
   table.hashes.map do |h|
     m = Match.new do |match|
       match.season = seasons[h["Season"]]
@@ -13,8 +16,11 @@ step "there are following trips:" do |table|
       match.game_type = h["Type"]
       match.save!
     end
-    m.create_trip!({ official_number: h["Number"] })
+    t = m.create_trip!({ official_number: h["Number"] })
     matches << m
+    if h["Visitor"].present?
+      users[h["Visitor"]].trips << t
+    end
   end
 
   @matches = matches.sort_by { |m| m.date }.reverse
@@ -23,11 +29,10 @@ end
 step "I am guest user" do
 end
 
-step "I am signed in user" do
+step "I am signed in as user1" do
   switch_to_subdomain('account')
-  create(:user, username: 'username').confirm!
   visit '/users/sign_in'
-  fill_in 'Username', with: 'username'
+  fill_in 'Username', with: 'user1'
   fill_in 'Password', with: 'password'
   click_button "Sign in"
   expect(page).to have_content("Zalogowano pomyślnie")
@@ -52,5 +57,5 @@ step "I should not see a column about being on tour" do
 end
 
 step "I should see a column about being on tour" do
-  expect(page).to have_selector(:xpath, "//table[@id='trips']//thead//tr//th[8]")
+  expect(page.find(:xpath, "//table[@id='trips']//thead//tr//th[8]")).to have_content("Obecność(2)")
 end

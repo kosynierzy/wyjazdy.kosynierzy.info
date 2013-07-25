@@ -1,8 +1,7 @@
 @javascript
 Feature: On Tour History
   In order to remember the history of tours
-  As a user
-  I want to be able to check where I have been
+  I want to be able to check group records
 
   Background:
     Given there are following trips:
@@ -15,13 +14,3 @@ Feature: On Tour History
   Scenario: Browse list
     When I visit on tour page
     Then I should see tour history list
-
-  Scenario: Guest user lists matches
-    Given I am guest user
-    When I visit on tour page
-    Then I should not see a column about being on tour
-
-  Scenario: Regular user lists matches
-    Given I am signed in user
-    When I visit on tour page
-    Then I should see a column about being on tour
