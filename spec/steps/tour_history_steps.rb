@@ -31,6 +31,9 @@ step "I am guest user" do
 end
 
 step "I am signed in as user1" do
+  unless User.where(username: 'user1').any?
+    create(:user, username: 'user1')
+  end
   switch_to_subdomain('account')
   visit '/users/sign_in'
   fill_in 'Username', with: 'user1'
@@ -70,4 +73,20 @@ step "I should have registered presence" do
     presence = @user1.trips.include?(@matches[index].trip)
     row.find(:xpath, "td[8]").text.should eq(presence ? ':)' : ':(')
   end
+end
+
+step "I say that I have been at game" do
+  find('a', text: ':(').click
+end
+
+step "I should see a smile" do
+  find('a', text: ':)')
+end
+
+step "I say that I have not been at game" do
+  find('a', text: ':)').click
+end
+
+step "I should see a sad smile" do
+  find('a', text: ':(')
 end
