@@ -30,6 +30,18 @@ describe OnTour::TripRepresenter do
       expect(@parsed_body['article_url']).to eq(trip.article_url)
     end
 
+    describe 'links' do
+      it { expect(@parsed_body).to have_key('links') }
+
+      it 'contains presence url' do
+        expect(@parsed_body['links']['presence']).to eq({"href" => "http://wyjazdy.lvh.me/trips/#{trip.id}/presence"})
+      end
+
+      it 'contains absence url' do
+        expect(@parsed_body['links']['absence']).to eq({"href" => "http://wyjazdy.lvh.me/trips/#{trip.id}/absence"})
+      end
+    end
+
     context 'guest user' do
       let(:user) { nil }
 

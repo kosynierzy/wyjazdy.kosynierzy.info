@@ -80,4 +80,7 @@ Kosynierzy::Application.configure do
 
   # Chillout.io
   config.chillout = { secret: Figaro.env.chillout_secret }
+
+  # Representer
+  config.representer.default_url_options = { :host => 'kosynierzy.info' }
 end

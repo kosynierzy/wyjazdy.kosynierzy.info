@@ -36,4 +36,7 @@ Kosynierzy::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Representer
+  config.representer.default_url_options = { :host => 'kosynierzy.dev' }
 end

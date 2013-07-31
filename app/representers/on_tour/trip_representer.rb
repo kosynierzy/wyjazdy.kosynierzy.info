@@ -2,6 +2,7 @@ require 'roar/representer/json'
 
 module OnTour::TripRepresenter
   include Roar::Representer::JSON
+  include Roar::Representer::JSON::HAL::Links
 
   property :id
   property :official_number
@@ -14,5 +15,13 @@ module OnTour::TripRepresenter
 
   def current_user_presence(user)
     user && user.trips.include?(self)
+  end
+
+  link :presence do
+    trip_presence_url(self, subdomain: 'wyjazdy')
+  end
+
+  link :absence do
+    trip_absence_url(self, subdomain: 'wyjazdy')
   end
 end
