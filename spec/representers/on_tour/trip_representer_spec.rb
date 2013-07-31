@@ -34,11 +34,11 @@ describe OnTour::TripRepresenter do
       it { expect(@parsed_body).to have_key('links') }
 
       it 'contains presence url' do
-        expect(@parsed_body['links']['presence']).to eq({"href" => "http://wyjazdy.lvh.me/trips/#{trip.id}/presence"})
+        expect(@parsed_body['links']['presence']).to eq({"href" => "/trips/#{trip.id}/presence.json"})
       end
 
       it 'contains absence url' do
-        expect(@parsed_body['links']['absence']).to eq({"href" => "http://wyjazdy.lvh.me/trips/#{trip.id}/absence"})
+        expect(@parsed_body['links']['absence']).to eq({"href" => "/trips/#{trip.id}/absence.json"})
       end
     end
 

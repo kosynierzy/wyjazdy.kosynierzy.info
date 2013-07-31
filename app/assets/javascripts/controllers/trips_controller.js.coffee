@@ -4,9 +4,9 @@ angular.module('kosynierzy').controller 'TripsCtrl', ['$scope', 'Trips', ($scope
 
   $scope.participate = (trip) ->
     trip.presence = true
-    Trips.participate(trip.id)
+    Trips.participate(trip)
 
   $scope.leave = (trip) ->
     trip.presence = false
-    Trips.leave(trip.id)
+    Trips.leave(trip)
 ]

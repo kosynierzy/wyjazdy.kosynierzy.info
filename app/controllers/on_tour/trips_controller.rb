@@ -16,12 +16,16 @@ class OnTour::TripsController < ApplicationController
   def presence
     current_user.trips << trip
 
-    redirect_to root_path, notice: t('update.success')
+    respond_to do |format|
+      format.json { head :ok }
+    end
   end
 
   def absence
     current_user.trips.delete(trip)
 
-    redirect_to root_path, notice: t('update.success')
+    respond_to do |format|
+      format.json { head :ok }
+    end
   end
 end

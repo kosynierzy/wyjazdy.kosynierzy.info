@@ -18,10 +18,10 @@ module OnTour::TripRepresenter
   end
 
   link :presence do
-    trip_presence_url(self, subdomain: 'wyjazdy')
+    trip_presence_path(self, subdomain: 'wyjazdy', format: 'json')
   end
 
   link :absence do
-    trip_absence_url(self, subdomain: 'wyjazdy')
+    trip_absence_path(self, subdomain: 'wyjazdy', format: 'json')
   end
 end
