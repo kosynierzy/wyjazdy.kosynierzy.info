@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe OnTour::TripRepresenter do
   let(:trip) { create(:trip) }
-  let(:user) { double(:user, trips: []) }
+  let(:current_user_trips) { [] }
 
   describe '#to_json' do
     before do
-      json = trip.extend(described_class).to_json(current_user: user)
+      json = trip.extend(described_class).to_json(current_user_trips: current_user_trips)
       @parsed_body = JSON.parse(json)
     end
 
@@ -51,7 +51,7 @@ describe OnTour::TripRepresenter do
     end
 
     context 'user have not been on trip' do
-      let(:user) { double(:user, trips: []) }
+      let(:current_user_trips) { [] }
 
       it 'contains false presence' do
         expect(@parsed_body['presence']).to eq(false)
@@ -59,7 +59,7 @@ describe OnTour::TripRepresenter do
     end
 
     context 'user have been on trip' do
-      let(:user) { double(:user, trips: [trip]) }
+      let(:current_user_trips) { [trip.id] }
 
       it 'contains true presence' do
         expect(@parsed_body['presence']).to eq(true)

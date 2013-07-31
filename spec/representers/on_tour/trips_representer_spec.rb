@@ -12,7 +12,7 @@ describe OnTour::TripsRepresenter do
         trips << create(:trip, match: match)
       end
 
-      json = trips.extend(described_class).to_json
+      json = trips.extend(described_class).to_json(current_user_trips: [])
       @parsed_body = JSON.parse(json)
     end
 
