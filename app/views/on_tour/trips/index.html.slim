@@ -11,6 +11,6 @@ table#trips ng-controller="TripsCtrl"
       - if signed_in?
         th
           = t('trips.presence')
-          | (#{current_user.trips.size})
+          | ({{ number_of_trips }})
   tbody
     = render 'trip'

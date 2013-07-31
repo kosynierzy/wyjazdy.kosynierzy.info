@@ -50,6 +50,7 @@ Feature: Private history
     And I visit on tour page
     When I say that I have been at game
     Then I should see a smile
+    And I should increase number of trips
 
   Scenario: User marks absence
     Given there are following trips:
@@ -59,3 +60,4 @@ Feature: Private history
     And I visit on tour page
     When I say that I have not been at game
     Then I should see a sad smile
+    And I should decrease number of trips

@@ -90,3 +90,11 @@ end
 step "I should see a sad smile" do
   find('a', text: ':(')
 end
+
+step "I should increase number of trips" do
+  expect(page.find(:xpath, "//table[@id='trips']//thead//tr//th[8]")).to have_content("Obecność(1)")
+end
+
+step "I should decrease number of trips" do
+  expect(page.find(:xpath, "//table[@id='trips']//thead//tr//th[8]")).to have_content("Obecność(0)")
+end

@@ -25,6 +25,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'rails-assets-angular'
+  gem 'rails-assets-underscore'
 end
 
 gem 'commands'
