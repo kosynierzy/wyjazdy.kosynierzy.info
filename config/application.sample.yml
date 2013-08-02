@@ -1,1 +1,2 @@
 APP_HOST: 'kosynierzy.dev'
+SECRET_KEY_BASE: '6ee32cea59375e6cfdd033d3512e3a10'
