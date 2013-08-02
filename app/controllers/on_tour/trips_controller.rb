@@ -1,7 +1,7 @@
 class OnTour::TripsController < ApplicationController
   respond_to :json, :html
 
-  before_filter :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index]
 
   expose(:trips) { Trip.includes(match: :season).order('matches.date DESC') }
   expose(:trip)
