@@ -9,7 +9,6 @@ describe Match do
 
   it { should have_one(:trip) }
   it { should belong_to(:season) }
-  it { should allow_mass_assignment_of(:stats_url) }
 
   describe '#destroy' do
     before(:each) do

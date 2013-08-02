@@ -4,10 +4,10 @@ Kosynierzy::Application.routes.draw do
 
     devise_scope :user do
       authenticated :user do
-        root :to => 'devise/registrations#edit'
+        root :to => 'devise/registrations#edit', as: :authenticated_user
       end
 
-      root :to => 'devise/sessions#new'
+      root :to => 'devise/sessions#new', as: :guest_user
     end
   end
 
@@ -22,7 +22,7 @@ Kosynierzy::Application.routes.draw do
         delete :absence
       end
 
-      root :to => 'trips#index'
+      root :to => 'trips#index', as: :on_tour
     end
   end
 

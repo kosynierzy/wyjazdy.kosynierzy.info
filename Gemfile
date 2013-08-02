@@ -3,30 +3,23 @@ source 'http://rails-assets.org'
 
 ruby '2.0.0'
 
-gem 'rails', '3.2.14'
+gem 'rails', '4.0.0'
 gem 'rails-i18n'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'schema_plus'
+# gem 'schema_plus'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'neat'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
-
-  gem 'rails-assets-angular'
-  gem 'rails-assets-underscore'
-end
+# assets
+gem 'sass-rails',   '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'neat'
+gem 'therubyracer', :platforms => :ruby
+gem 'uglifier', '>= 1.3.0'
+gem 'rails-assets-angular'
+gem 'rails-assets-underscore'
 
 gem 'commands'
 gem 'coveralls', require: false
@@ -37,7 +30,7 @@ gem 'exception_notification'
 gem 'figaro'
 gem 'jquery-rails'
 gem 'roar-rails'
-gem 'simple_form'
+gem 'simple_form', '~> 3.0.0.rc'
 gem 'slim'
 gem 'slim-rails'
 
