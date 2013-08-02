@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(:version => 20130510113720) do
     t.integer "user_id",  :null => false
     t.index ["group_id"], :name => "fk__groups_users_group_id", :order => {"group_id" => :asc}
     t.index ["user_id"], :name => "fk__groups_users_user_id", :order => {"user_id" => :asc}
-    t.foreign_key ["group_id"], "groups", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_groups_users_group_id"
-    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_groups_users_user_id"
+    # t.foreign_key ["group_id"], "groups", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_groups_users_group_id"
+    # t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_groups_users_user_id"
   end
 
   create_table "seasons", :force => true do |t|
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20130510113720) do
     t.string   "stats_url"
     t.integer  "season_id"
     t.index ["season_id"], :name => "fk__matches_season_id", :order => {"season_id" => :asc}
-    t.foreign_key ["season_id"], "seasons", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_matches_season_id"
+    # t.foreign_key ["season_id"], "seasons", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_matches_season_id"
   end
 
   create_table "trips", :force => true do |t|
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(:version => 20130510113720) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
     t.index ["match_id"], :name => "fk__trips_match_id", :order => {"match_id" => :asc}
-    t.foreign_key ["match_id"], "matches", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_trips_match_id"
+    # t.foreign_key ["match_id"], "matches", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_trips_match_id"
   end
 
   create_table "trips_users", :id => false, :force => true do |t|
@@ -96,8 +96,8 @@ ActiveRecord::Schema.define(:version => 20130510113720) do
     t.datetime "created_at"
     t.index ["trip_id"], :name => "fk__trips_users_trip_id", :order => {"trip_id" => :asc}
     t.index ["user_id"], :name => "fk__trips_users_user_id", :order => {"user_id" => :asc}
-    t.foreign_key ["trip_id"], "trips", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_trips_users_trip_id"
-    t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_trips_users_user_id"
+    # t.foreign_key ["trip_id"], "trips", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_trips_users_trip_id"
+    # t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_trips_users_user_id"
   end
 
 end
