@@ -14,6 +14,9 @@ set :domain, 'cwaniak.eu'
 set :deploy_to, '/var/www/kosynierzy'
 set :repository, 'git://github.com/kosynierzy/kosynierzy.info.git'
 set :branch, 'master'
+set :bundle_bin, './bin/bundle'
+set :bundle_options, lambda { %{--without development:test --path "#{bundle_path}" --deployment} }
+settings.rake_assets_precompile = lambda { "#{rake} assets:precompile" }
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
