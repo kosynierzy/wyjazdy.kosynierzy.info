@@ -58,6 +58,7 @@ group :test do
   gem 'poltergeist'
   gem 'rb-inotify'
   gem 'shoulda-matchers'
+  gem 'site_prism'
   gem 'turnip'
 end
 

@@ -1,5 +1,6 @@
 require 'turnip/capybara'
 require 'capybara/poltergeist'
+require 'site_prism'
 
 Capybara.javascript_driver = :poltergeist
 Capybara.configure do |config|
