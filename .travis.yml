@@ -4,7 +4,7 @@ before_script:
   - psql -c 'create database kosynierzy_test;' -U postgres
   - cp config/database.sample.yml config/database.yml
   - cp config/application.sample.yml config/application.yml
-  - bundle exec rake db:schema:load
+  - ./bin/rake db:schema:load
 script:
   - bundle exec rspec spec
 rvm:
