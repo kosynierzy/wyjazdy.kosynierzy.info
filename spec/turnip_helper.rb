@@ -20,5 +20,7 @@ RSpec.configure do |config|
   switch_to_main_domain
 end
 
-# Requires turnip steps
+$:.unshift('.')
+Dir.glob("spec/sections/**/*.rb").each { |f| require f }
+Dir.glob("spec/pages/**/*.rb").each { |f| require f }
 Dir.glob("spec/steps/**/*.rb").each { |f| load f, true }

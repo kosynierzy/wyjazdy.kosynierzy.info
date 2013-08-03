@@ -43,35 +43,35 @@ step "I am signed in as user1" do
 end
 
 step "I visit on tour page" do
-  switch_to_subdomain('wyjazdy')
-  visit "/"
+  @trips_page = OnTour::TripsPage.new
+  @trips_page.load
 end
 
 step "I should see tour history list" do
-  page.all(:xpath, "//table[@id='trips']//tbody//tr").each_with_index do |row, index|
-    row.find(:xpath, "td[1]").text.should eq(@matches[index].season.name)
-    row.find(:xpath, "td[3]").text.should eq(@matches[index].home_team)
-    row.find(:xpath, "td[4]").text.should eq("#{@matches[index].home_score}:#{@matches[index].away_score}")
-    row.find(:xpath, "td[5]").text.should eq(@matches[index].trip.official_number.to_s)
+  @trips_page.trips.rows.each_with_index do |row, index|
+    expect(row.season_cell.text).to eq(@matches[index].season.name)
+    expect(row.rival_cell.text).to eq(@matches[index].home_team)
+    expect(row.score_cell.text).to eq("#{@matches[index].home_score}:#{@matches[index].away_score}")
+    expect(row.number_cell.text).to eq(@matches[index].trip.official_number.to_s)
   end
 end
 
 step "I should not see a column about being on tour" do
-  expect(page).to_not have_selector(:xpath, "//table[@id='trips']//thead//tr//th[8]")
+  expect(@trips_page.trips.header).to_not have_presence_cell
 end
 
 step "I should see a column about being on tour" do
-  expect(page).to have_selector(:xpath, "//table[@id='trips']//thead//tr//th[8]")
+  expect(@trips_page.trips.header).to have_presence_cell
 end
 
 step "I should see that I have been twice on tour" do
-  expect(page.find(:xpath, "//table[@id='trips']//thead//tr//th[8]")).to have_content("Obecność(2)")
+  expect(@trips_page.trips.header.presence_cell).to have_content("Obecność(2)")
 end
 
 step "I should have registered presence" do
-  page.all(:xpath, "//table[@id='trips']//tbody//tr").each_with_index do |row, index|
+  @trips_page.trips.rows.each_with_index do |row, index|
     presence = @user1.trips.include?(@matches[index].trip)
-    row.find(:xpath, "td[8]").text.should eq(presence ? ':)' : ':(')
+    expect(row.presence_cell).to have_content(presence ? ':)' : ':(')
   end
 end
 
@@ -92,9 +92,9 @@ step "I should see a sad smile" do
 end
 
 step "I should increase number of trips" do
-  expect(page.find(:xpath, "//table[@id='trips']//thead//tr//th[8]")).to have_content("Obecność(1)")
+  expect(@trips_page.trips.header.presence_cell).to have_content("Obecność(1)")
 end
 
 step "I should decrease number of trips" do
-  expect(page.find(:xpath, "//table[@id='trips']//thead//tr//th[8]")).to have_content("Obecność(0)")
+  expect(@trips_page.trips.header.presence_cell).to have_content("Obecność(0)")
 end
