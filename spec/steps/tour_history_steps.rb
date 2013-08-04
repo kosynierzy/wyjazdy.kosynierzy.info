@@ -34,11 +34,11 @@ step "I am signed in as user1" do
   unless User.where(username: 'user1').any?
     create(:user, username: 'user1')
   end
-  switch_to_subdomain('account')
-  visit '/users/sign_in'
-  fill_in 'Username', with: 'user1'
-  fill_in 'Password', with: 'password'
-  click_button "Sign in"
+  @account_page = AccountPage.new
+  @account_page.load
+  @account_page.sign_in.username.set 'user1'
+  @account_page.sign_in.password.set 'password'
+  @account_page.sign_in.submit.click
   expect(page).to have_content("Zalogowano pomyślnie")
 end
 
