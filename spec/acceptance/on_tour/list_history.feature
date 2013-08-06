@@ -12,5 +12,5 @@ Feature: On Tour History
       | 2001/02 | 2002-02-10 | Team1 | Team5 | 50:60 | PLK  | 30     |
 
   Scenario: Browse list
-    When I visit on tour page
+    When I navigate to on tour page
     Then I should see tour history list

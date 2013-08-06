@@ -8,5 +8,9 @@ module OnTour
     element :comment_cell, :xpath, 'td[6]'
     element :article_cell, :xpath, 'td[7]'
     element :presence_cell, :xpath, 'td[8]'
+
+    def toggle_presence
+      presence_cell.find('a').click
+    end
   end
 end
