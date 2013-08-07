@@ -16,7 +16,7 @@ gem 'pg'
 gem 'sass-rails',   '~> 4.0.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'neat'
-gem 'therubyracer', :platforms => :ruby
+gem 'execjs'
 gem 'uglifier', '>= 1.3.0'
 gem 'rails-assets-angular'
 gem 'rails-assets-underscore'
