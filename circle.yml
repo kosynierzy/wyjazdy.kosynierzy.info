@@ -1,0 +1,13 @@
+machine:
+  hosts:
+    kosynierzy.dev: 127.0.0.1
+    wyjazdy.kosynierzy.dev: 127.0.0.1
+    account.kosynierzy.dev: 127.0.0.1
+
+checkout:
+  post:
+    - cp config/application.sample.yml config/application.yml
+
+dependencies:
+  bundler:
+    without: [development]
