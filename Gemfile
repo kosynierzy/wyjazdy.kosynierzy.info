@@ -10,7 +10,7 @@ gem 'rails-i18n'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-# gem 'schema_plus'
+gem 'schema_plus'
 
 # assets
 gem 'sass-rails',   '~> 4.0.0'
