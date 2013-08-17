@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>We're sorry, but something went wrong (500)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
-</head>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Przepraszamy, ale chyba coś poszło nie tak</title>
+    <script src="http://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9:all.js"></script>
+    <style type="text/css">
+      html {
+        font-family: source-sans-pro, sans-serif;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      body {
+        font-size: 1em;
+        line-height: 1.618em;
+        margin: 0;
+        background-image: url(/500.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        overflow: hidden;
+      }
+      div.dialog {
+        width: 50em;
+        padding: 0 4em;
+        margin: 8em auto 0;
+      }
+      h1 {
+        font-size: 100%;
+        color: #000;
+        font-size: 2em;
+        text-shadow: 1px 1px 10px #fff;
+      }
+      p {
+        color: white;
+        font-size: 1.5em;
+        font-weight: bold;
+        text-shadow: 1px 1px 10px #000;
+      }
+      a {
+        text-decoration: none;
+        color: #2277dd;
+      }
+    </style>
+  </head>
 
-<body>
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <h1>We're sorry, but something went wrong.</h1>
-  </div>
-</body>
+  <body>
+    <div class="dialog">
+      <h1>Tylko spokojnie!</h1>
+      <p>Na stronie wystąpił niespodziewany błąd, nasza ekipa techniczna została już poinformowana o problemie i za chwilę się nim zajmie. Spróbuj ponownie za parę minut, a tymczasem zapraszamy na <a href="http://kosynierzy.info/" rel="home">stronę główną</a>.
+    </div>
+  </body>
 </html>
