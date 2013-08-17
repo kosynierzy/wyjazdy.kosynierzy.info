@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    title= t('404.title')
+    = javascript_include_tag "http://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9:all.js"
+    css:
+      html {
+        font-family: source-sans-pro, sans-serif;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      body {
+        font-size: 1em;
+        line-height: 1.618em;
+        margin: 0;
+        background-image: url("/assets/404.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        overflow: hidden;
+      }
+      div.dialog {
+        width: 50em;
+        padding: 0 4em;
+        margin: 8em auto 0;
+      }
+      h1 {
+        font-size: 100%;
+        color: #000;
+        font-size: 2em;
+        text-shadow: 1px 1px 10px #fff;
+      }
+      p {
+        color: white;
+        font-size: 1.5em;
+        font-weight: bold;
+        text-shadow: 1px 1px 10px #000;
+      }
+      a {
+        text-decoration: none;
+        color: #2277dd;
+      }
+
+  body
+    = yield

@@ -11,3 +11,7 @@ pl:
     relation: 'Relacja'
     presence: 'Obecność'
     toggle: 'Zmień'
+  404:
+    title: 'Pusto (404)'
+    header: 'Ta strona nie istnieje.'
+    message: 'Sprawdź, czy nie ma literówki w adresie albo wróć na <a href="http://kosynierzy.info/" rel="home">stronę główną</a>.'
