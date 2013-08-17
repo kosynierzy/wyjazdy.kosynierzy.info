@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     rescue_from ActionController::RoutingError, with: :render_404
     rescue_from ActionController::UnknownController, with: :render_404
     rescue_from AbstractController::ActionNotFound, with: :render_404
-    rescue_from Mongoid::Errors::DocumentNotFound, with: :render_404
+    rescue_from ActiveRecord::RecordNotFound, with: :render_404
   end
 
   protected
