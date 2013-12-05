@@ -3,7 +3,7 @@ source 'http://rails-assets.org'
 
 ruby '2.0.0'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.2'
 gem 'rails-i18n'
 
 # Bundle edge Rails instead:
@@ -30,7 +30,7 @@ gem 'exception_notification'
 gem 'figaro'
 gem 'jquery-rails'
 gem 'roar-rails'
-gem 'simple_form', '~> 3.0.0.rc'
+gem 'simple_form', '~> 3.0.0'
 gem 'slim'
 gem 'slim-rails'
 
