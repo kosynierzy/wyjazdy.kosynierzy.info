@@ -10,29 +10,29 @@ gem 'rails-i18n'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'schema_plus'
+gem 'schema_plus', '~> 1.3.1'
 
 # assets
-gem 'sass-rails',   '~> 4.0.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'neat'
+gem 'sass-rails',   '~> 4.0.1'
+gem 'coffee-rails', '~> 4.0.1'
+gem 'neat', '~> 1.5.0'
 gem 'execjs'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '~> 2.3.2'
 gem 'rails-assets-angular'
 gem 'rails-assets-underscore'
 
 gem 'commands'
 gem 'coveralls', require: false
 gem 'decent_exposure'
-gem 'devise'
-gem 'devise-i18n'
+gem 'devise', '~> 3.2.2'
+gem 'devise-i18n', '~> 0.10.2'
 gem 'exception_notification'
 gem 'figaro'
 gem 'jquery-rails'
 gem 'roar-rails'
-gem 'simple_form', '~> 3.0.0'
-gem 'slim'
-gem 'slim-rails'
+gem 'simple_form', '~> 3.0.1'
+gem 'slim', '~> 2.0.2'
+gem 'slim-rails', '~> 2.0.4'
 
 group :production do
   gem 'chillout'
@@ -78,7 +78,7 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn'
+gem 'unicorn', '~> 4.7.0'
 
 # Deploy with Capistrano
 # gem 'capistrano'
