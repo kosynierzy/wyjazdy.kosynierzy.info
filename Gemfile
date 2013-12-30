@@ -9,7 +9,7 @@ gem 'rails-i18n'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+gem 'pg', '~> 0.17.1'
 gem 'schema_plus', '~> 1.3.1'
 
 # assets
@@ -17,7 +17,7 @@ gem 'sass-rails',   '~> 4.0.1'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'neat', '~> 1.5.0'
 gem 'execjs'
-gem 'uglifier', '~> 2.3.2'
+gem 'uglifier', '~> 2.4.0'
 gem 'rails-assets-angular'
 gem 'rails-assets-underscore'
 
