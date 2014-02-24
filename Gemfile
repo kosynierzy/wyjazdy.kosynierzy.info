@@ -10,7 +10,7 @@ gem 'rails-i18n'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg', '~> 0.17.1'
-gem 'schema_plus', '~> 1.3.1'
+gem 'schema_plus', '~> 1.4.0'
 
 # assets
 gem 'sass-rails',   '~> 4.0.1'
@@ -78,7 +78,7 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn', '~> 4.7.0'
+gem 'unicorn', '~> 4.8.0'
 
 # Deploy with Capistrano
 # gem 'capistrano'
