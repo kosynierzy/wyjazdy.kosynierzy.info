@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe OnTour::MatchRepresenter do
   let(:match) { create(:match) }

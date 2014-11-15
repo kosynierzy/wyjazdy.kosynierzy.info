@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe OnTour::TripsController do
+RSpec.describe OnTour::TripsController, type: :controller do
 
   describe "GET 'index'" do
     it "returns http success" do
@@ -47,7 +47,7 @@ describe OnTour::TripsController do
 
     it "returns nothing" do
       post 'presence', trip_id: trip.id, format: 'json'
-      expect(body).to be_blank
+      expect(response.body).to be_blank
     end
 
     it "adds trip to current user trips" do
@@ -79,7 +79,7 @@ describe OnTour::TripsController do
 
     it "returns nothing" do
       delete 'absence', trip_id: trip.id, format: 'json'
-      expect(body).to be_blank
+      expect(response.body).to be_blank
     end
 
     it "removes trip from current user trips" do

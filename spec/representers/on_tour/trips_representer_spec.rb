@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe OnTour::TripsRepresenter do
   describe '#to_json' do

@@ -39,20 +39,17 @@ end
 
 group :development do
   gem 'better_errors'
-  gem 'guard'
-  gem 'guard-rspec'
   gem 'letter_opener'
 end
 
 group :test do
   gem 'database_cleaner'
   gem 'delorean'
-  gem 'fuubar'
   gem 'launchy'
   gem 'poltergeist'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '~> 2.7.0'
   gem 'site_prism', require: false
-  gem 'turnip'
+  gem 'turnip', '~> 1.2.4'
 end
 
 group :test, :development do
@@ -61,7 +58,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'pry-rails'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.1.0'
 end
 
 # To use ActiveModel has_secure_password

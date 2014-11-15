@@ -1,4 +1,4 @@
-Kosynierzy::Application.routes.draw do
+Rails.application.routes.draw do
   constraints subdomain: 'account' do
     devise_for :users
 

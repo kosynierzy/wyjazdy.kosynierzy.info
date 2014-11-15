@@ -1,7 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Season do
-  it { should validate_presence_of(:name) }
-  it { should validate_uniqueness_of(:name) }
-  it { should have_many(:matches) }
+RSpec.describe Season, type: :model do
+  it { is_expected.to validate_presence_of(:name) }
+  it { is_expected.to validate_uniqueness_of(:name) }
+  it { is_expected.to have_many(:matches) }
 end

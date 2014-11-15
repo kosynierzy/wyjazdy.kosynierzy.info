@@ -1,12 +1,12 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe User do
-  it { should validate_presence_of(:username) }
-  it { pending('should validate_uniqueness_of(:username)') }
-  it { should validate_presence_of(:email) }
-  it { should validate_uniqueness_of(:email) }
-  it { pending('should validate_confirmation_of(:password)') }
+RSpec.describe User, type: :model do
+  it { is_expected.to validate_presence_of(:username) }
+  it { is_expected.to validate_uniqueness_of(:username) }
+  it { is_expected.to validate_presence_of(:email) }
+  it { is_expected.to validate_uniqueness_of(:email) }
+  it { is_expected.to validate_confirmation_of(:password) }
 
-  it { should have_and_belong_to_many(:groups) }
-  it { should have_and_belong_to_many(:trips) }
+  it { is_expected.to have_and_belong_to_many(:groups) }
+  it { is_expected.to have_and_belong_to_many(:trips) }
 end

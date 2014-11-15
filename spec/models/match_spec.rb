@@ -1,14 +1,14 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Match do
-  it { should validate_presence_of(:home_team) }
-  it { should validate_presence_of(:away_team) }
-  it { should validate_presence_of(:date) }
-  it { should validate_presence_of(:game_type) }
-  it { should validate_presence_of(:season) }
+RSpec.describe Match, type: :model do
+  it { is_expected.to validate_presence_of(:home_team) }
+  it { is_expected.to validate_presence_of(:away_team) }
+  it { is_expected.to validate_presence_of(:date) }
+  it { is_expected.to validate_presence_of(:game_type) }
+  it { is_expected.to validate_presence_of(:season) }
 
-  it { should have_one(:trip) }
-  it { should belong_to(:season) }
+  it { is_expected.to have_one(:trip) }
+  it { is_expected.to belong_to(:season) }
 
   describe '#destroy' do
     before(:each) do

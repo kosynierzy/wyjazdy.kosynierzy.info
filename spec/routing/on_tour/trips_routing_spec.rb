@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'on tour trips routes' do
+RSpec.describe 'on tour trips routes', type: :routing do
   it 'routes subdomain root to OnTour::Trips#index' do
     expect({ get: 'http://wyjazdy.kosynierzy.info/' }).to route_to(
       subdomain: 'wyjazdy',

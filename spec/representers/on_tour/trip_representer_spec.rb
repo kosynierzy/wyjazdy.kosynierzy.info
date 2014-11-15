@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe OnTour::TripRepresenter do
   let(:trip) { create(:trip) }
