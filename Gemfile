@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 source 'https://rails-assets.org'
 
-ruby '2.0.0'
+ruby '2.1.5'
 
-gem 'rails', '4.0.3'
+gem 'rails', '~> 4.1.7'
 gem 'rails-i18n'
 
 # Bundle edge Rails instead:
@@ -14,7 +14,7 @@ gem 'schema_plus', '~> 1.4.0'
 
 # assets
 gem 'sass-rails',   '~> 4.0.1'
-gem 'coffee-rails', '~> 4.0.1'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'neat', '~> 1.5.0'
 gem 'execjs'
 gem 'uglifier', '~> 2.4.0'
@@ -30,9 +30,8 @@ gem 'exception_notification'
 gem 'figaro'
 gem 'jquery-rails'
 gem 'roar-rails'
-gem 'simple_form', '~> 3.0.1'
-gem 'slim', '~> 2.0.2'
-gem 'slim-rails', '~> 2.0.4'
+gem 'simple_form', '~> 3.0.2'
+gem 'slim-rails', '~> 2.1.5'
 
 group :production do
   gem 'chillout'
@@ -45,18 +44,12 @@ group :development do
   gem 'letter_opener'
 end
 
-group :linux do
-  gem 'libnotify'
-  gem 'rb-inotify'
-end
-
 group :test do
   gem 'database_cleaner'
   gem 'delorean'
   gem 'fuubar'
   gem 'launchy'
   gem 'poltergeist'
-  gem 'rb-inotify'
   gem 'shoulda-matchers'
   gem 'site_prism', require: false
   gem 'turnip'
