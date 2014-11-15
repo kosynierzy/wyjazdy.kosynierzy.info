@@ -1,3 +1,4 @@
+require 'rails_helper'
 require 'turnip/capybara'
 require 'capybara/poltergeist'
 require 'site_prism'

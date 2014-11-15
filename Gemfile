@@ -24,8 +24,8 @@ gem 'rails-assets-underscore'
 gem 'commands'
 gem 'coveralls', require: false
 gem 'decent_exposure'
-gem 'devise', '~> 3.2.2'
-gem 'devise-i18n', '~> 0.10.2'
+gem 'devise', '~> 3.4.1'
+gem 'devise-i18n', '~> 0.11.2'
 gem 'exception_notification'
 gem 'figaro'
 gem 'jquery-rails'
@@ -56,7 +56,6 @@ group :test, :development do
   gem 'awesome_print'
   gem 'capybara'
   gem 'factory_girl_rails'
-  gem 'pry'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.1.0'
 end
