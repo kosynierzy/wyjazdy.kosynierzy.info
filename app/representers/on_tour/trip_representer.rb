@@ -1,8 +1,8 @@
-require 'roar/representer/json'
+require 'roar/json'
 
 module OnTour::TripRepresenter
-  include Roar::Representer::JSON
-  include Roar::Representer::JSON::HAL::Links
+  include Roar::JSON
+  include Roar::JSON::HAL::Links
 
   property :id
   property :official_number

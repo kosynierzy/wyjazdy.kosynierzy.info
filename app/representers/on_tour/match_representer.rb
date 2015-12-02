@@ -1,7 +1,7 @@
-require 'roar/representer/json'
+require 'roar/json'
 
 module OnTour::MatchRepresenter
-  include Roar::Representer::JSON
+  include Roar::JSON
 
   property :id
   property :season, extend: OnTour::SeasonRepresenter

@@ -1,5 +1,3 @@
-require 'roar/representer/json'
-
 describe OnTour::SeasonRepresenter do
   let(:season) { create(:season) }
 
