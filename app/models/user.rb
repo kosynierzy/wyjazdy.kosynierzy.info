@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
          :validatable,
          :timeoutable
 
-  has_and_belongs_to_many :groups
   has_and_belongs_to_many :trips
 
   validates :username, presence: true, uniqueness: true
