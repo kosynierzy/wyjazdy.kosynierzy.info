@@ -10,11 +10,11 @@ module OnTour::TripRepresenter
   property :article_url
   property :match, extend: OnTour::MatchRepresenter
   property :presence, getter: lambda { |opts|
-    current_user_presence(opts[:current_user_trips])
+    user_presence(opts[:user_id])
   }
 
-  def current_user_presence(trips)
-    trips.include?(id)
+  def user_presence(id)
+    participants.include?(id)
   end
 
   link :presence do

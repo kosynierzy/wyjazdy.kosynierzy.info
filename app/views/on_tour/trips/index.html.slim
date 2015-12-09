@@ -8,7 +8,7 @@ table#trips ng-controller="TripsCtrl"
       th= t('trips.trip_number')
       th= t('trips.comment')
       th= t('trips.relation')
-      - if signed_in?
+      - if user_signed_in?
         th
           = t('trips.presence')
           | ({{ number_of_trips }})

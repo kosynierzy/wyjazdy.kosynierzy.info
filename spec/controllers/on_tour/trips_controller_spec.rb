@@ -27,7 +27,7 @@ RSpec.describe OnTour::TripsController, type: :controller do
     end
   end
 
-  describe "POST 'presence'" do
+  xdescribe "POST 'presence'" do
     let(:current_user) { create(:user) }
     let(:trip) { create(:trip) }
 
@@ -58,7 +58,7 @@ RSpec.describe OnTour::TripsController, type: :controller do
     end
   end
 
-  describe "DELETE 'absence'" do
+  xdescribe "DELETE 'absence'" do
     let(:current_user) { create(:user) }
     let(:trip) { create(:trip) }
 

@@ -9,12 +9,13 @@ class OnTour::TripsController < ApplicationController
   def index
     respond_with trips do |format|
       format.html
-      format.json { render json: trips.extend(OnTour::TripsRepresenter).to_json(current_user_trips: current_user_trips) }
+      format.json { render json: trips.extend(OnTour::TripsRepresenter).to_json(user_id: current_user_data["id"]) }
     end
   end
 
   def presence
-    current_user.trips << trip
+    trip.participants.push(current_user_data["id"])
+    trip.save!
 
     respond_to do |format|
       format.json { head :ok }
@@ -22,20 +23,11 @@ class OnTour::TripsController < ApplicationController
   end
 
   def absence
-    current_user.trips.delete(trip)
+    trip.participants.delete(current_user_data["id"])
+    trip.save!
 
     respond_to do |format|
       format.json { head :ok }
-    end
-  end
-
-  private
-
-  def current_user_trips
-    if user_signed_in?
-      current_user.trips.pluck(:id)
-    else
-      []
     end
   end
 end

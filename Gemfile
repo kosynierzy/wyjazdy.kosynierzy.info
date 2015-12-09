@@ -8,6 +8,8 @@ gem "rails-i18n"
 
 gem "pg", "~> 0.18.4"
 gem "schema_plus", "~> 1.8.1"
+gem "rails_sso", "~> 0.7.3"
+gem "omniauth-kosynierzy", "~> 0.1.1"
 
 # assets
 gem "sass-rails",   "~> 5.0.4"
@@ -23,8 +25,6 @@ end
 
 gem "coveralls", require: false
 gem "decent_exposure"
-gem "devise", "~> 3.5.2"
-gem "devise-i18n", "~> 0.12.1"
 gem "exception_notification"
 gem "figaro"
 gem "jquery-rails"
@@ -61,7 +61,7 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem "unicorn", '~> 4.8.0'
+# gem "unicorn", '~> 4.8.0'
 
 # Deploy with Capistrano
 # gem 'capistrano'

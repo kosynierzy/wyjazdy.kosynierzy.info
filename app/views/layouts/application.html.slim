@@ -21,10 +21,10 @@ html lang="pl" ng-app="kosynierzy"
           ul role="nav"
             - if user_signed_in?
               li role="menuitem"
-                = link_to 'Sign out', destroy_user_session_url(subdomain: 'account'), method: :delete
+                = link_to 'Sign out', sso.sign_out_path, method: :delete
             - else
               li role="menuitem"
-                = link_to 'Sign in', new_user_session_url(subdomain: 'account')
+                = link_to 'Sign in', sso.sign_in_path
 
     .site
       .notice= notice
