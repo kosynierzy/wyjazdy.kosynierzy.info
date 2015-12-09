@@ -32,6 +32,10 @@ gem "roar-rails"
 gem "simple_form", "~> 3.0.2"
 gem "slim-rails", "~> 3.0.1"
 
+group :production do
+  gem "passenger", "~> 5.0.22"
+end
+
 group :development do
   gem "letter_opener"
 end
